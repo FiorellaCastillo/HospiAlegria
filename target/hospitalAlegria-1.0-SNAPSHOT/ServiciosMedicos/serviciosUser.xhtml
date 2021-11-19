@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <h:head>
+        <title>Servicios Médicos</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./../resources/plantillas/plantillaUser.xhtml">
+            <ui:define name="content">
+
+                    <b:column col-sm="6" col-md="4">
+                        <b:thumbnail>
+                            <b:image library="images" name="consulta.jpg" />
+                            <f:facet name="caption">
+                                <h3>Consulta Médica</h3>
+                                <p>Este se conoce como el primer paso para el diagnóstico, tratamiento y recuperación de cualquier condición de salud. </p>
+                                <p>
+                                 <b:button look="primary" value="Registrar Cita" href="/hospitalAlegria-1.0-SNAPSHOT/faces/Cita/tramitaCUser.xhtml"/> 
+                                </p>
+                            </f:facet>
+                        </b:thumbnail>
+                    </b:column>
+
+
+                    <b:column col-sm="6" col-md="4">
+                        <b:thumbnail>
+                            <b:image library="images" name="ultras.jpg" />
+                            <f:facet name="caption">
+                                <h3>Ultrasonido</h3>
+                                <p>Consiste en el uso de ondas sonoras de alta frecuencia para crear imágenes de órganos y estructuras dentro del cuerpo.</p>
+                                <p>
+                                  <b:button look="primary" value="Registrar Cita" href="/hospitalAlegria-1.0-SNAPSHOT/faces/Cita/tramitaCUser.xhtml"/>  
+                                </p>
+                            </f:facet>
+                        </b:thumbnail>
+                    </b:column>
+                
+
+                    <b:column col-sm="6" col-md="4">
+                        <b:thumbnail>
+                            <b:image library="images" name="radio3.jpg" />
+                            <f:facet name="caption">
+                                <h3>Radiografía</h3>
+                                <p>Es una prueba rápida e indolora que genera imágenes de las estructuras internas del cuerpo, en especial de los huesos.</p>
+                                <p>                                   
+                                 <b:button look="primary" value="Registrar Cita" href="/hospitalAlegria-1.0-SNAPSHOT/faces/Cita/tramitaCUser.xhtml"/>  
+                                </p>
+                            </f:facet>
+                        </b:thumbnail>
+                    </b:column>
+            </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

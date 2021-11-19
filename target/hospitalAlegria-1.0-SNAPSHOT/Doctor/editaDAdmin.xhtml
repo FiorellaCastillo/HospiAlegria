@@ -1,0 +1,112 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+        <ui:composition template="./../resources/plantillas/plantillaAdmin.xhtml">
+            <ui:define name="content">
+                <h:form id="editaDoctoresForm">
+                    <b:panel title="Doctores" look="primary">
+                        <b:row tooltip="La identificación no se modifica">
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Identificación" for="identificacion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Identificacion" id="identificacion"
+                                             required="true"
+                                             value="#{doctorController.idDoctor}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="identificacion"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Nombre" for="nombre"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Nombre" id="nombre"
+                                             required="true"
+                                             value="#{doctorController.nombreD}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="habitacion"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Primer Apellido" for="apellido1"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Primer Apellido" id="apellido1"
+                                             required="true"
+                                             value="#{doctorController.apellido1}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="apellido1"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Segundo Apellido" for="apellido2"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Segundo Apellido" id="apellido2"
+                                             required="true"
+                                             value="#{doctorController.apellido2}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="apellido2"/>
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Identificador Especialidad" for="id"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                 <b:inputText placeholder="Identificador Especialidad" id="id"
+                                             required="true"
+                                             value="#{doctorController.idEspecialidad}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="id"/>
+                            </b:column>
+                        </b:row>
+                       
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Número de Teléfono" for="numTel"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Número de Teléfono" id="numTel"
+                                             required="true"
+                                             value="#{doctorController.numTel}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="numTel"/>
+                            </b:column>
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2"/>
+                            <b:column medium-screen="6">
+                                <b:commandButton value="Insertar"
+                                                 action="#{doctorController.inserta()}"
+                                                 look="primary"
+                                                 style="width: 33%"/>
+                                 <b:commandButton value="Eliminar"
+                                                  action="#{doctorController.elimina()}"
+                                                 look="danger"
+                                                 style="width: 33%"/>
+                            </b:column>   
+                        </b:row>    
+                    </b:panel>
+                </h:form> 
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
+

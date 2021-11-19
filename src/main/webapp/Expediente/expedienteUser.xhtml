@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+    <body>
+        <ui:composition template="./../resources/plantillas/plantillaUser.xhtml">
+            <ui:define name="content">
+                <h:form id="expedienteForm">
+                        <b:container fluid="true">
+                            <b:panel title="Expediente de Citas de Paciente" look="primary">
+                                <b:row>
+                                    <b:column medium-screen="2">
+                                        <h:outputLabel value="Identificación de Paciente" for="identificacion"/>
+                                    </b:column>
+                                    <b:column medium-screen="2">
+                                        <b:inputText placeholder="999999999"
+                                                     required="true"
+                                                     id="identificacion"
+                                                     value="#{pacienteController.idPaciente}"/>
+                                    </b:column>
+                                    <b:column medium-screen="1">
+                                        <b:commandButton value="Buscar Paciente"
+                                                         icon="search"
+                                                         look="success"
+                                                         onclick="ajax:pacienteController.buscaPaciente(pacienteController.idPaciente)"
+                                                         update="@form"/>               
+                                                         
+                                    </b:column>
+                                    <b:column medium-screen="4" style-class="message">
+                                        <b:message for="identificacion"/>
+                                    </b:column>           
+                                </b:row>
+                                <b:row>
+                                    <b:column medium-screen="1">
+                                        <h:outputLabel value="Nombre" for="nombre"/>
+                                    </b:column>
+                                    <b:column medium-screen="4">
+                                        <h:outputLabel value="#{pacienteController.nombreCompleto}"/>
+                                    </b:column>
+                                </b:row>
+                                <b:row>
+                                    <b:column medium-screen="1"/>
+                                    <b:column medium-screen="4"/>
+                                    <b:commandButton id="btVerExpediente"
+                                                     value="Ver Expediente"
+                                                     look="primary"
+                                                     action="#{reporteController.verExpediente(pacienteController)}"
+                                                     icon="print"/>                     
+                                </b:row>
+                            </b:panel>
+                        </b:container>
+                    </h:form>
+            </ui:define>
+        </ui:composition>
+      </body>  
+</html>
+
+

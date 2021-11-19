@@ -1,0 +1,59 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <title>BD Pacientes</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="./../resources/plantillas/plantillaAdmin.xhtml">
+
+            <ui:define name="content">
+                 <h:form>
+                     <b:dataTable value="#{pacienteController.pacientes}"
+                                 var="paciente">
+                        <b:dataTableColumn value="#{paciente.idPaciente}"
+                                           width="8%"
+                                           label="Identificación"/>
+                        <b:dataTableColumn value="#{paciente.idHabitacion}"
+                                           width="8%"
+                                           label="Habitación"/>
+                        <b:dataTableColumn value="#{paciente.nombreP}"
+                                           width="12%"
+                                           label="Nombre"/>
+                        <b:dataTableColumn value="#{paciente.apellido1}"
+                                           width="15%"
+                                           label="Primer Apellido"/>
+                        <b:dataTableColumn value="#{paciente.apellido2}"
+                                           width="15%"
+                                           label="Segundo Apellido"/>
+                        <b:dataTableColumn value="#{paciente.direccPaciente}"
+                                           width="10%"
+                                           style="text-align: center"
+                                           label="Dirección"/>
+                        <b:dataTableColumn value="#{paciente.genero}"
+                                           width="8%"
+                                           style="text-align: center"
+                                           label="Género"/>
+                        <b:dataTableColumn value="#{paciente.numTel}"
+                                           width="15%"
+                                           style="text-align: center"
+                                           label="Número de Teléfono."/>
+                          <b:dataTableColumn value="#{paciente.fechaNaci}"
+                                           width="16%"
+                                           style="text-align: center"
+                                           label="Fech.Naci"/>
+                        
+                    </b:dataTable>
+                </h:form>
+          </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+
+

@@ -1,0 +1,293 @@
+<?xml version='1.0' encoding='UTF-8' ?> 
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+    
+     <style>
+    .site-footer
+            {
+                margin-bottom:0;
+                background-color: #fcce03;
+                padding:45px 0 20px;
+                font-size:15px;
+                line-height:24px;
+                color: #000000;
+            }
+            .site-footer hr
+            {
+                border-top-color:#bbb;
+                opacity:0.5
+            }
+            .site-footer hr.small
+            {
+                margin:20px 0
+            }
+            .site-footer h6
+            {
+                color:#fff;
+                font-size:16px;
+                text-transform:uppercase;
+                margin-top:5px;
+                letter-spacing:2px
+            }
+            .site-footer a
+            {
+                color: #000000;
+            }
+            .site-footer a:hover
+            {
+                color:#3366cc;
+                text-decoration:none;
+            }
+            .footer-links
+            {
+                padding-left:0;
+                list-style:none
+            }
+            .footer-links li
+            {
+                display:block
+            }
+            .footer-links a
+            {
+               
+                color:#000000
+            }
+            .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+            {
+                color:#3366cc;
+                text-decoration:none;
+            }
+            .footer-links.inline li
+            {
+                display:inline-block
+            }
+            .site-footer .social-icons
+            {
+                text-align:right
+            }
+            .site-footer .social-icons a
+            {
+                width:40px;
+                height:40px;
+                line-height:40px;
+                margin-left:6px;
+                margin-right:0;
+                border-radius:100%;
+                background-color:#33353d
+            }
+            .copyright-text
+            {
+                margin:0
+            }
+            @media (max-width:991px)
+            {
+                .site-footer [class^=col-]
+                {
+                    margin-bottom:30px
+                }
+            }
+            @media (max-width:767px)
+            {
+                .site-footer
+                {
+                    padding-bottom:0
+                }
+                .site-footer .copyright-text,.site-footer .social-icons
+                {
+                    text-align:center
+                }
+            }
+            .social-icons
+            {
+                padding-left:0;
+                margin-bottom:0;
+                list-style:none
+            }
+            .social-icons li
+            {
+                display:inline-block;
+                margin-bottom:4px
+            }
+            .social-icons li.title
+            {
+                margin-right:15px;
+                text-transform:uppercase;
+                color:#96a2b2;
+                font-weight:700;
+                font-size:13px
+            }
+            .social-icons a{
+                background-color:#eceeef;
+                color:#818a91;
+                font-size:16px;
+                display:inline-block;
+                line-height:44px;
+                width:44px;
+                height:44px;
+                text-align:center;
+                margin-right:8px;
+                border-radius:100%;
+                -webkit-transition:all .2s linear;
+                -o-transition:all .2s linear;
+                transition:all .2s linear
+            }
+            .social-icons a:active,.social-icons a:focus,.social-icons a:hover
+            {
+                color:#fff;
+                background-color:#29aafe
+            }
+            .social-icons.size-sm a
+            {
+                line-height:34px;
+                height:34px;
+                width:34px;
+                font-size:14px
+            }
+            .social-icons a.facebook:hover
+            {
+                background-color:#3b5998
+            }
+            .social-icons a.twitter:hover
+            {
+                background-color:#00aced
+            }            
+
+            .social-icons a.whatsapp:hover
+            {
+                background-color:#00bb2d
+            }
+            .social-icons a.instagram:hover
+            {
+                background-color:#fc0345
+            }
+            @media (max-width:767px)
+            {
+                .social-icons li.title
+                {
+                    display:block;
+                    margin-right:0;
+                    font-weight:600
+                }
+            }
+            body {
+                background-color: #000000;
+                font-size: 12px;
+                font-family: Verdana, "Verdana CE",  Arial, "Arial CE", "Lucida Grande CE", lucida, "Helvetica CE", sans-serif;
+                color: #000000;  
+                margin: 10px;
+            }
+    </style>
+    <h:head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <h:outputStylesheet name="default.css"/>
+        <h:outputStylesheet name="cssLayout.css"/>
+
+        <title>El Hospital Más Feliz</title>
+    </h:head>
+
+    <h:body>
+
+        <div id="top">
+            <ui:insert name="top">
+                <b:navBar style="background-color: #fcce03"
+                          fluid="true" brand="Inicio" 
+                          brandHref="/hospitalAlegria-1.0-SNAPSHOT/faces/Roles/User/indexUser.xhtml">
+                    <b:navbarLinks pull="left">
+                        <b:image library="images" name="logo.png" height="53px"/>
+                    </b:navbarLinks>        
+                    <b:navbarLinks>
+                       <b:navLink value="Servicios Médicos" style="color: #000000 ; font-size: 15px" icon-awesome="fa-stethoscope" href="/hospitalAlegria-1.0-SNAPSHOT/faces/ServiciosMedicos/serviciosUser.xhtml"/>
+                       <b:navLink value="Medicamentos" style="color: #000000 ; font-size: 15px" icon-awesome="fa-plus-circle" href="/hospitalAlegria-1.0-SNAPSHOT/faces/Medicamentos/medicamentoUser.xhtml"/>
+                       
+                       <b:dropMenu value="Pacientes" style="color: #000000 ; font-size: 15px" icon-awesome="fa-group">
+                        <b:navLink value="Expediente" icon-awesome="fa-folder" href="/hospitalAlegria-1.0-SNAPSHOT/faces/Expediente/expedienteUser.xhtml"/>    
+                            <b:navLink value="Ver Pacientes" icon-awesome="fa-th-list" href="/hospitalAlegria-1.0-SNAPSHOT/faces/Paciente/listaPUser.xhtml"/>
+                        </b:dropMenu>
+                          <b:dropMenu value="Doctores" style="color: #000000 ; font-size: 15px" icon-awesome="fa-user-md">
+                             <b:navLink value="Ver Doctores" icon-awesome="fa-th-list"
+                                       href="/hospitalAlegria-1.0-SNAPSHOT/faces/Doctor/listaDUser.xhtml"/> 
+                        </b:dropMenu>
+                       <b:dropMenu value="Citas" style="color: #000000 ; font-size: 15px" icon-awesome="fa-heartbeat">
+                            <b:navLink value="Tramitar Cita" icon-awesome="fa-hospital-o"
+                                       href="/hospitalAlegria-1.0-SNAPSHOT/faces/Cita/tramitaCUser.xhtml"/>
+
+                        </b:dropMenu>
+                        </b:navbarLinks>
+                        <b:navbarLinks pull="right" style-class="hidden-xs">
+                         <b:dropMenu value="Configuración" style="color: #000000 ; font-size: 15px" icon-awesome="fa-cogs">
+                            <b:navLink value="Salir User" icon-awesome="fa-sign-out"
+                                       href="/hospitalAlegria-1.0-SNAPSHOT/faces/index.xhtml"/>
+                        </b:dropMenu>
+                    </b:navbarLinks>
+            </b:navBar> 
+
+            </ui:insert>
+        </div>
+        <div id="content" class="center_content">
+            <ui:insert name="content">Content</ui:insert>
+        </div>
+        <div id="bottom">
+            <ui:insert name="bottom">   <footer class="site-footer">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-sm-12 col-md-6">
+                                <h6><b>Sobre el hospital</b></h6>
+                                <p class="text-justify">El Hospital Alegría es una alternativa médica que combina un excelente servicio, calidad intachable y un precio asequible, a la capacidad de sus usuarios.
+                                  </p>
+                            <p class="text-justify"> Todo esto, unido a sus convenientes ubicaciones, hace del Hospital Alegría un 
+                                modelo que cumple a cabalidad con sus enunciados de <b>SEGURIDAD</b>, <b>CALIDAD</b>, <b>ACCESIBILIDAD e INNOVACIÓN</b> </p>
+                            
+                            </div>
+                            
+
+                            <div class="col-xs-6 col-md-3">
+                                <h6 align="center"><b>Categorías</b></h6>
+                                <ul class="footer-links">
+                                    <div align="center">
+                                        <li><a href="/hospitalAlegria-1.0-SNAPSHOT/faces/Expediente/expedienteUser.xhtml"><i><b>Expediente de Paciente</b></i></a></li>
+                                        <li><a href="/hospitalAlegria-1.0-SNAPSHOT/faces/Medicamentos/medicamentoUser.xhtml"><i><b>Medicamentos Disponibles</b></i></a></li>
+                                        <li><a href="/hospitalAlegria-1.0-SNAPSHOT/faces/Doctor/listaDUser.xhtml"><i><b>Doctores Disponibles</b></i></a></li>
+                                        <li><a href="/hospitalAlegria-1.0-SNAPSHOT/faces/ServiciosMedicos/serviciosUser.xhtml"><i><b>Servicios Médicos</b></i></a></li>
+                                    </div>
+                                </ul>
+                            </div>
+
+                            <div class="col-xs-6 col-md-3">
+                                <h6 align="center"><b>Links Accesibles</b></h6>
+                                <ul class="footer-links">
+                                    <div align="center">
+                                    <li><a href="/hospitalAlegria-1.0-SNAPSHOT/faces/Roles/User/indexUser.xhtml"><i><b>Inicio</b></i></a></li>
+                                    </div>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8 col-sm-6 col-xs-12">
+                                <p class="copyright-text">Copyright &copy; 2021 Todos los derechos reservados por
+                                    Hospital Alegría.
+                                </p>
+                            </div>
+
+                            <div class="col-md-4 col-sm-6 col-xs-12">
+                                <ul class="social-icons">
+                                    <li><a class="facebook" href="https://www.facebook.com/"><b:iconAwesome value="fa-facebook"/></a></li>
+                                    <li><a class="twitter" href="https://twitter.com/?lang=es"><b:iconAwesome value="fa-twitter"/></a></li>
+                                    <li><a class="whatsapp" href="#"><b:iconAwesome value="fa-whatsapp"/></a></li>
+                                    <li><a class="instagram" href="#"><b:iconAwesome value="fa-instagram"/>
+                                        </a>
+                                    </li>   
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </ui:insert>
+        </div>
+    </h:body>
+</html>

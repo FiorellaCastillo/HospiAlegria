@@ -1,0 +1,127 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+        <ui:composition template="../resources/plantillas/plantillaAdmin.xhtml">
+            <ui:define name="content">
+                <h:form id="citaForm">
+                    <b:panel title="Registro Cita" look="primary">
+                        
+                        <b:row tooltip="La identificación no se modifica">
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Identificación Paciente" for="identificacion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Identificacion del Paciente" id="identificacion"
+                                             required="true"
+                                             value="#{citasController.idPaciente}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="identificacion"/>
+                            </b:column>
+                        </b:row>
+
+                            <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Identificación Doctor" for="doct"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Identificacion del Doctor" id="doct"
+                                             required="true"
+                                             value="#{citasController.idDoctor}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="doct"/>
+                            </b:column>
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Servicio Médico" for="servicio"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:panelGrid size="" columns="3">
+                                    <b:radiobutton value="#{citasController.idServicio}"
+                                                   itemLabel="Consulta Médica"
+                                                   itemValue="1"/>
+                                    <b:radiobutton value="#{citasController.idServicio}"
+                                                   itemLabel="Radiografía"
+                                                   itemValue="2"/>
+                                    <b:radiobutton value="#{citasController.idServicio}"
+                                                   itemLabel="Ultrasonido"
+                                                   itemValue="3"/>
+                                </b:panelGrid>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="servicio"/>
+                            </b:column>
+                        </b:row>
+
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Habitación" for="habitacion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:panelGrid size="" columns="4">
+                                    <b:radiobutton value="#{citasController.idHabitacion}"
+                                                   itemLabel="Suite   Piso 1"
+                                                   itemValue="A-100"/>
+                                    <b:radiobutton value="#{citasController.idHabitacion}"
+                                                   itemLabel="Estándar   Piso 1"
+                                                   itemValue="A-201"/>
+                                    <b:radiobutton value="#{citasController.idHabitacion}"
+                                                   itemLabel="Suite   Piso 2"
+                                                   itemValue="B-121"/>
+                                    <b:radiobutton value="#{citasController.idHabitacion}"
+                                                   itemLabel="Estándar   Piso 3"
+                                                   itemValue="C-215"/>
+                                </b:panelGrid> 
+
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="habitacion"/>
+                            </b:column>
+                        </b:row>
+
+                       
+
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Fecha de Cita" for="fechaCita"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:datepicker id="fechaCita"
+                                              required="true"
+                                              value="#{citasController.fechaCita}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="fechaCita"/>
+                            </b:column>
+                        </b:row>
+                        
+                        <b:row>
+                            <b:column medium-screen="2"/>
+                            <b:column medium-screen="6">
+                                <b:commandButton value="Insertar"
+                                                 action="#{citasController.insertaAdmin()}"
+                                                 look="primary"
+                                                 style="width: 33%"/>
+                            </b:column>   
+                        </b:row>    
+                    </b:panel>
+                </h:form> 
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
+
+
+  
+ 
+

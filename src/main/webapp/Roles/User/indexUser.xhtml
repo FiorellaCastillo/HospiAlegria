@@ -1,0 +1,62 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+    <h:head>
+        <title>Inicio</title>
+    </h:head>
+    <h:body>
+        <ui:composition template="../../resources/plantillas/plantillaUser.xhtml">
+            <ui:define name="content">
+                <h:form>
+                    <style>
+                        div.scroll {
+                            position: relative;
+                            height:550px;
+                            overflow:scroll;
+                            width: 98%;
+                        }
+                    </style>
+                    <b:growl id="growlMsg" globalOnly="true" placement-from="bottom" showDetail="false" showSummary="true" allowDismiss="true" delay="10000" escape="true" />
+
+
+                    <b:container id="scrollable">
+                        <div id="section1" class="container-fluid">
+
+                            <p align="center"> <b:image library="images" name="doc.jpg" height="550px"/></p>
+                            <br></br>
+                            <div>
+                                <p align="center" > <b:button value="Listado de Especialistas" look="primary" style="background-color: blue"  href="/hospitalAlegria-1.0-SNAPSHOT/faces/Doctor/listaDUser.xhtml" /></p>
+
+                            </div>
+
+                        </div>
+                        <br></br>
+                        <div id="section2" class="container-fluid">
+
+                            <p align="center"><b:image library="images" name="medi.jpg" height="200px"/></p>
+                            <br></br>
+                            <div>
+                                <p align="center"> <b:button value="Medicamentos Disponibles" look="primary" style="background-color:orange"   href="/hospitalAlegria-1.0-SNAPSHOT/faces/Medicamentos/medicamentoUser.xhtml" /></p>
+                            </div>
+                            
+                        </div>
+                           <br></br>
+                        <div id="section3" class="container-fluid">
+
+                            <p align="center"><b:image library="images" name="banner1.jpg" height="90px"/></p>
+                            <br></br>
+                            <div>
+                                <p align="center"> <b:button value="Visite Nuestros Servicios Médicos" look="primary" style="background-color: red"  href="/hospitalAlegria-1.0-SNAPSHOT/faces/ServiciosMedicos/serviciosUser.xhtml" /></p>
+                             </div>
+                       </div> 
+                    </b:container>
+                </h:form>
+             </ui:define>
+        </ui:composition>
+    </h:body>
+</html>
+

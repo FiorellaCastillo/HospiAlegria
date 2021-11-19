@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+  <ui:composition template="./../resources/plantillas/plantilla.xhtml">
+            <ui:define name="content">
+                <b:form>
+                    <b:container fluid="true">
+                        <b:panel title ="Medicamentos Disponibles" look="success">
+                            <b:row>
+                                <p align="center"><b:image library="images" name="meds.png" style="width:950px"/></p>
+                           
+                               <b:column medium-screen="15">
+                                   <p align="center"><b:commandButton value="Ver PDF" action="#{reporteController.verMedicamentos()}" style="background-color: orangered" look="primary"/> 
+                                         <b:commandButton value="Descargar PDF" action="#{reporteController.descargarMedicamentos()}" style="background-color:green" look="primary"/></p>
+                               </b:column>
+                           </b:row>
+                        </b:panel>
+                    </b:container>
+                    </b:form>
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
+

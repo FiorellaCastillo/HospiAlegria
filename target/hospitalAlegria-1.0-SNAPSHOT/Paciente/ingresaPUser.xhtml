@@ -1,0 +1,151 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <body>
+        <ui:composition template="../resources/plantillas/plantillaUser.xhtml">
+            <ui:define name="content">
+                <h:form id="editaPacientesForm">
+                    <b:panel title="Paciente" look="primary">
+                        <b:row tooltip="La identificación no se modifica">
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Identificación" for="identificacion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Identificacion" id="identificacion"
+                                             required="true"
+                                             value="#{pacienteController.idPaciente}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="identificacion"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Habitación" for="habitacion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Habitación" id="habitacion"
+                                             required="true"
+                                             value="#{pacienteController.idHabitacion}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="habitacion"/>
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Nombre" for="nombre"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Nombre" id="nombre"
+                                             required="true"
+                                             value="#{pacienteController.nombreP}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="nombre"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Primer Apellido" for="apellido1"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Primer Apellido" id="apellido1"
+                                             required="true"
+                                             value="#{pacienteController.apellido1}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="apellido1"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Segundo Apellido" for="apellido2"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Segundo Apellido" id="apellido2"
+                                             required="true"
+                                             value="#{pacienteController.apellido2}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="apellido2"/>
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Dirección" for="direccion"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                 <b:inputText placeholder="Direccion" id="direccion"
+                                             required="true"
+                                             value="#{pacienteController.direccPaciente}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="direccion"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Género" for="genero"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:panelGrid size="" columns="2">
+                                    <b:radiobutton value="#{pacienteController.genero}"
+                                                   itemLabel="Masculino"
+                                                   itemValue="M"/>
+                                    <b:radiobutton value="#{pacienteController.genero}"
+                                                   itemLabel="Femenino"
+                                                   itemValue="F"/>
+                                </b:panelGrid>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="genero"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Número de Teléfono" for="numTel"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:inputText placeholder="Número de Teléfono" id="numTel"
+                                             required="true"
+                                             value="#{pacienteController.numTel}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="numTel"/>
+                            </b:column>
+                        </b:row>
+                         <b:row>
+                            <b:column medium-screen="2">
+                                <h:outputLabel value="Fecha de nacimiento" for="fechaNaci"/>
+                            </b:column>
+                            <b:column medium-screen="4">
+                                <b:datepicker id="fechaNaci"
+                                              required="true"
+                                              value="#{pacienteController.fechaNaci}"/>
+                            </b:column>
+                            <b:column medium-screen="6" style-class="message">
+                                <b:message for="fechaNaci"/>
+                            </b:column>
+                        </b:row>
+                        <b:row>
+                            <b:column medium-screen="2"/>
+                            <b:column medium-screen="6">
+                                <b:commandButton value="Insertar"
+                                                 action="#{pacienteController.insertaUser()}"
+                                                 look="primary"
+                                                 style="width: 33%"/>
+                            </b:column>   
+                        </b:row>    
+                    </b:panel>
+                </h:form> 
+            </ui:define>
+        </ui:composition>
+    </body>
+</html>
+

@@ -1,0 +1,55 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:b="http://bootsfaces.net/ui">
+
+    <h:head>
+        <title>BD Doctores</title>
+    </h:head>
+    <h:body>
+
+        <ui:composition template="./../resources/plantillas/plantillaRespaldo.xhtml">
+
+            <ui:define name="content">
+                 <h:form>
+
+                    <b:dataTable value="#{doctorController.doctores}"
+                                 var="doctor"
+                                 excel="true"
+                                 csv="true"
+                                 pdf="true"
+                                 columnVisibility="true"
+                                 copy="true"
+                                 print="true">
+                        <b:dataTableColumn value="#{doctor.idDoctor}"
+                                           width="8%"
+                                           label="Identificación"/>
+                        <b:dataTableColumn value="#{doctor.nombreD}"
+                                           width="12%"
+                                           label="Nombre"/>
+                        <b:dataTableColumn value="#{doctor.apellido1}"
+                                           width="15%"
+                                           label="Primer Apellido"/>
+                        <b:dataTableColumn value="#{doctor.apellido2}"
+                                           width="15%"
+                                           label="Segundo Apellido"/>
+                        <b:dataTableColumn value="#{doctor.idEspecialidad}"
+                                           width="8%"
+                                           style="text-align: center"
+                                           label="Especialidad"/>
+                        <b:dataTableColumn value="#{doctor.numTel}"
+                                           width="15%"
+                                           style="text-align: center"
+                                           label="Número de Teléfono"/>
+                    </b:dataTable>
+                </h:form>
+          </ui:define>
+
+        </ui:composition>
+    </h:body>
+</html>
+
+
