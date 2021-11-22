@@ -1,0 +1,26 @@
+## YAML Template.
+---
+- name: "gcr.io/cloud-builders/docker"
+    args:
+      ["build", "-t", "gcr.io/hospital-alegria/hello-cloud-run:${SHORT_SHA}", "."]
+    # push the container image to Container Registry
+  - name: "gcr.io/cloud-builders/docker"
+    args: ["push", "gcr.io/hospital-alegria/hello-cloud-run"]
+    # deploy container image to Cloud Run
+  - name: "gcr.io/cloud-builders/gcloud"
+    args:
+      [
+        "beta",
+        "run",
+        "deploy",
+        "hello-cloud-run",
+        "--image",
+        "gcr.io/hospital-alegria/hello-cloud-run:${SHORT_SHA}",
+        "--region",
+        "us-central1",
+        "--allow-unauthenticated",
+      ]
+    env:
+      - "PORT=8080"
+images:
+  - gcr.io/$hospital-alegria/hello-cloud-run
